@@ -44,7 +44,7 @@
               <label for="code">Code</label>
             </div>
              <div class="form-floating mb-3">
-        <label for="requirments" >requirements
+        <label for="requirments" >
         </label>
         <select id="" class="form-select" name="requirments"placeholder="name@example.com" >
           {{#each subjects}}
@@ -54,16 +54,12 @@
         </select>
       </div>
       <div class="form-floating mb-3">
-        <label for="department" >departments</label>
+        <label for="department" ></label>
         <select id="" class="form-select" name="department">
           {{#each departments}}
           <option value="{{_id}}">{{name}}</option>
 
           {{/each}}
-
-          <option value="CS">CS</option>
-          <option value="IT">IT</option>
-          <option value="IS">IS</option>
         </select>
       </div>
       <div>

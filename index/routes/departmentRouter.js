@@ -1,6 +1,6 @@
 import { Router } from "express"
-import departmentModel from "../database/department.js";
-import subjectModel from "../database/subject.js";
+import department from "../database/department.js";
+import subject from "../database/subject.js";
 import { create, index, show, store } from "../controller/department.js";
 
 const router =new Router();
