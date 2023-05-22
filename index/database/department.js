@@ -1,5 +1,5 @@
 import { Schema,model } from "mongoose";
-const departments = new Schema({
+const department = new Schema({
     name:{
         type :String,
         required:true,
@@ -11,4 +11,4 @@ required:false,
 },
 {timestamps:true});
  
-export default model("departments",departments);
+export default model("department",department);
