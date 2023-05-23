@@ -1,9 +1,9 @@
 import subject from "../database/subject.js";
 import department from "../database/department.js";
-
+import doctor from "../database/doctor.js";
   export const index = async(req,res) =>{
-    const subjects = await subject.find({},{name:1}).lean();
-    
+    const subjects = await subject.find({ doctor: req.user._id},{name:1}).lean();
+    console.log(req.user);
     res.render("subjects/index",{subjects});
     };
 
@@ -33,7 +33,8 @@ console.log(department);
     code,
     department,
     requirements,
-    stname
+    stname,
+    doctor:req.user._id,
 });
         res.redirect("/subjects");
     };
@@ -46,10 +47,11 @@ console.log(department);
             };
 
     export const show =async (req,res)=>{
-
-const {_id} = req.params;
-const singleSubject=  await subject.findById(_id).populate("departments").populate("requirements").lean();
-console.log(singleSubject)
+const {id} = req.params;
+const singleSubject=  await subject.findById(id)
+.populate("department")
+.lean();
+console.log(singleSubject);
 res.render("subjects/show",{subject : singleSubject });
     };
 
