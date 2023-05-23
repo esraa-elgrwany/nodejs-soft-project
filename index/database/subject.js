@@ -1,5 +1,6 @@
 import { Schema,model } from "mongoose";
 const subject = new Schema({
+   
     name:{
         type :String,
         required:true,
@@ -9,15 +10,19 @@ const subject = new Schema({
         required:false,
     },
   
-    departments:{
-        type :Schema.Types.ObjectId,
+    department:{
+        type : Schema.Types.ObjectId,
         required:false,
-        ref:"departments",
+        ref:"department",
     },
     requirements:{
         type :String,
         required:false,
     
+    },
+    stname:{
+        type :String,
+        required:true,
     }
 },
 {timestamps:true});

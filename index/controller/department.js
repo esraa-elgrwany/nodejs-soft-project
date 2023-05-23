@@ -47,7 +47,3 @@ res.render("departments/showd",{ departments});
   export const deleteOne=async(req,res)=>{
                     const{id}= req.params;
                     const deleteDepartment=  await department.findByIdAndDelete(id);
-                    
-                    res.redirect("/departments");
-                
-                   };

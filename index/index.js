@@ -21,6 +21,7 @@ app.set('views', './views');
 
 app.use(methodOverride('_method'));
 app.use("/subjects",subjectsRouter);
+
 app.use("/departments",departmentRouter);
 
 app.listen(process.env.port,() =>{
