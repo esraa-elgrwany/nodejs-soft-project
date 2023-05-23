@@ -13,22 +13,12 @@
 <body>
   <div class="container col-6">
     <br>
-    <h1>create new subjects</h1>
+    <h1>Edit {{department.name}}</h1>
 <br>
       <div class="card">
         <div class="card-body">
             <br>
-    <form action="/subjects" method="post">
-     <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="floatingInput"
-                placeholder="name@example.com"
-                name="stname"
-              />
-              <label for="stname"> Student Name</label>
-            </div>
+    <form action="/departments/{{department._id}}?_method=PUT" method="post">
          <div class="form-floating mb-3">
               <input
                 type="text"
@@ -36,8 +26,9 @@
                 id="floatingInput"
                 placeholder="name@example.com"
                 name="name"
+                value="{{department.name}}"
               />
-              <label for="name"> Subject Name</label>
+              <label for="name"> Name</label>
             </div>
 
       <div class="mb-3">
@@ -48,27 +39,11 @@
                 id="floatingInput"
                 placeholder="name@example.com"
                 name="code"
+                 value="{{department.code}}"
               />
               <label for="code">Code</label>
             </div>
-           <div class="form-floating mb-3">
-        <label for="requirments" >
-        </label>
-        <select id="" class="form-select" name="requirments"placeholder="name@example.com" >
-          {{#each subjects}}
-          <option value="{{_id}}">{{name}}</option>
-        
-          {{/each}}
-        </select>
       </div>
-
-          {{#each departments}}
-          <option value="{{_id}}"> {{name}}</option>
-          {{/each}}
-        </select>
-
-      </div>
-
       <div>
         <button type="submit" class="btn btn-outline-info">Submit</button>
       </div>

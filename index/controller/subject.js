@@ -46,11 +46,10 @@ console.log(department);
             };
 
     export const show =async (req,res)=>{
-const {id} = req.params;
-const singleSubject=  await subject.findById(id)
-.populate("department")
-.lean();
-console.log(singleSubject);
+
+const {_id} = req.params;
+const singleSubject=  await subject.findById(_id).populate("departments").populate("requirements").lean();
+console.log(singleSubject)
 res.render("subjects/show",{subject : singleSubject });
     };
 
