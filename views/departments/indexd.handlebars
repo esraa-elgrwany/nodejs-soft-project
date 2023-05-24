@@ -1,0 +1,39 @@
+<div class="container col-6">
+
+
+   
+    
+    <div class="text-center text-center ">
+        <br>
+          <a class="btn btn-outline-dark" href="/departments/create"><h1>add new department</h1></a>  </div>
+        <br>
+
+         <div class="card">
+            <div class="card-body">
+                <table class="table">
+                 <tr>
+                    <th>name</th>
+                    <th></th>
+                 </tr>
+                {{#each departments}}
+                <tr class="d-flex justify-content-between">
+               <th>{{name}}</th>
+               
+             <th><a class="btn btn-outline-success" href="/departments/{{_id}}">show</a></th>
+            
+             <th><a class="btn btn-outline-success" href="/departments/{{_id}}/edit">edit</a>
+             </th>
+             <th>
+             <form action="/departments/{{_id}}?_method=DElETE" method="post">
+                <button type="submit"> Delete</button>
+             </form>
+             </th>
+        
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</div>
+
+    
