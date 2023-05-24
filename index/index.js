@@ -6,6 +6,8 @@ import subjectsRouter from "./routes/subjectsRouter.js";
 import departmentRouter from "./routes/departmentRouter.js";
 import authRoutes from "./routes/auth.js";
 import cookieParser from "cookie-parser";
+import studentR from "./routes/studentR.js";
+import doctorR from "./routes/doctorR.js";
 
 
 import methodOverride from "method-override";
@@ -31,7 +33,11 @@ app.use(methodOverride('_method'));
 app.use("/subjects",authentication,subjectsRouter);
 
 app.use("/departments",departmentRouter);
-app.use("/",authRoutes);
+app.use("/", authRoutes);
+
+app.use("/Student", studentR);
+app.use("/doctor", doctorR);
+
 
 app.get("Doctor/mean" ,(req,res) => {
     res.render("Doctor/mean");
