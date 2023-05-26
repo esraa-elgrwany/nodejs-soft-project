@@ -9,6 +9,7 @@ import cookieParser from "cookie-parser";
 import { downloadFile } from "./controller/filleDownloads.js";
 import methodOverride from "method-override";
 import { authentication } from './middleware/authentication.js';
+import createDoctorRoutes from "./database/createDocyor.js";
 
 dotenv.config();
 
@@ -28,6 +29,9 @@ app.use(methodOverride('_method'));
 app.use("/subjects", authentication, subjectsRouter);
 app.use("/departments", departmentRouter);
 app.use("/", authRoutes);
+app.use("/", createDoctorRoutes);
+
+
 
 app.get("/Doctor/mean", (req, res) => {
   res.render("Doctor/mean");

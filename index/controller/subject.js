@@ -1,9 +1,9 @@
 import subject from "../database/subject.js";
 import department from "../database/department.js";
-import doctor from "../database/doctor.js";
+
   export const index = async(req,res) =>{
-    const subjects = await subject.find({ doctor: req.user._id},{name:1}).lean();
-    console.log(req.user);
+    const subjects = await subject.find({},{name:1}).lean();
+    
     res.render("subjects/index",{subjects});
     };
 
@@ -33,8 +33,7 @@ console.log(department);
     code,
     department,
     requirements,
-    stname,
-    doctor:req.user._id,
+    stname
 });
         res.redirect("/subjects");
     };
