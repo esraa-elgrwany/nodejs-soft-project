@@ -6,7 +6,6 @@ import subjectsRouter from "./routes/subjectsRouter.js";
 import departmentRouter from "./routes/departmentRouter.js";
 import authRoutes from "./routes/auth.js";
 import cookieParser from "cookie-parser";
-import { downloadFile } from "./controller/filleDownloads.js";
 import methodOverride from "method-override";
 import { authentication } from './middleware/authentication.js';
 import createDoctorRoutes from "./database/createDocyor.js";
@@ -36,10 +35,6 @@ app.use("/", createDoctorRoutes);
 app.get("/Doctor/mean", (req, res) => {
   res.render("Doctor/mean");
 });
-
-app.get('/downloads', (req, res) => {
-    downloadFile(req, res);
-  });
 
 app.listen(port, () => {
   console.log("Started the application on http://localhost:" + port);
