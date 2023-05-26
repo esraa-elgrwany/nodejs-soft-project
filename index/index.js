@@ -9,6 +9,9 @@ import cookieParser from "cookie-parser";
 import methodOverride from "method-override";
 import { authentication } from './middleware/authentication.js';
 import createDoctorRoutes from "./database/createDocyor.js";
+////////////////////////////////////////////////////////////////
+import  Students_Routers  from "./routes/students.js";
+///////////////////////////////////////////////////////////////////
 
 dotenv.config();
 
@@ -29,7 +32,10 @@ app.use("/subjects", authentication, subjectsRouter);
 app.use("/departments", departmentRouter);
 app.use("/", authRoutes);
 app.use("/", createDoctorRoutes);
+///////////////////////////////////////////////////////////////////////
+app.use("/students", Students_Routers);
 
+///////////////////////////////////////////////////////
 
 
 app.get("/Doctor/mean", (req, res) => {

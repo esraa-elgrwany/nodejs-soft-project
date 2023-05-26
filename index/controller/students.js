@@ -1,7 +1,7 @@
 import students_model from "../database/students_DB.js";
 import subject from "../database/subject.js";
 import { faker } from "@faker-js/faker";
-import { get_Student_Data } from "./subjects.js";
+//import { get_Student_Data } from "./subjects.js";
 
 export const create_Students = async (req, res) => {
   for (let index = 0; index < 200; index++) {
