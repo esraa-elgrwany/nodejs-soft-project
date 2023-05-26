@@ -6,10 +6,12 @@ import subjectsRouter from "./routes/subjectsRouter.js";
 import departmentRouter from "./routes/departmentRouter.js";
 import authRoutes from "./routes/auth.js";
 import cookieParser from "cookie-parser";
-import { downloadFile } from "./controller/filleDownloads.js";
 import methodOverride from "method-override";
 import { authentication } from './middleware/authentication.js';
 import createDoctorRoutes from "./database/createDocyor.js";
+////////////////////////////////////////////////////////////////
+import  Students_Routers  from "./routes/students.js";
+///////////////////////////////////////////////////////////////////
 
 dotenv.config();
 
@@ -30,16 +32,15 @@ app.use("/subjects", authentication, subjectsRouter);
 app.use("/departments", departmentRouter);
 app.use("/", authRoutes);
 app.use("/", createDoctorRoutes);
+///////////////////////////////////////////////////////////////////////
+app.use("/students", Students_Routers);
 
+///////////////////////////////////////////////////////
 
 
 app.get("/Doctor/mean", (req, res) => {
   res.render("Doctor/mean");
 });
-
-app.get('/downloads', (req, res) => {
-    downloadFile(req, res);
-  });
 
 app.listen(port, () => {
   console.log("Started the application on http://localhost:" + port);
