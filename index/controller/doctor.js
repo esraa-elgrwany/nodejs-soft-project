@@ -1,6 +1,9 @@
 import doctor from '../database/doctor.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import subject from "../database/subject.js";
+
+
 
  export const registerForm =(req,res) => {
     res.render("authentication/register"); 
@@ -14,6 +17,10 @@ export const register = async(req,res) => {
     console.log(encryptedPassword);
     await doctor.create({username,email,password: encryptedPassword });
     res.redirect('/login')
+};
+
+export const doctorForm =(req,res) => {
+    res.render("authentication/createDoctor"); 
 };
 
 // hadyy@gmail.com  12345
@@ -44,13 +51,12 @@ export const login = async (req,res) => {
         
        const jwtToken = jwt.sign(data, process.env.JWT_SECRET);
        console.log(jwtToken)
+    //    const subjects = await subject.find({ doctor: req.user._id},{name:1}).lean();
 
         
-  
-
-
-    // console.log(email,password);
     res.cookie('token',jwtToken); 
-    res.send('loggin')
+    res.render('authentication/mean');
+
+    
 };
 
