@@ -49,6 +49,7 @@ console.log(department);
 const {id} = req.params;
 const singleSubject=  await subject.findById(id)
 .populate("department")
+
 .populate("requirements")
 .lean();
 console.log(singleSubject);
@@ -63,9 +64,11 @@ res.render("subjects/show",{subject : singleSubject });
 
    };
 
+
    export const getAll=async(req,res) =>{
     const subjects = await subject.find().lean();
     console.log(subjects);
     res.render("subjects/generate",{subjects});
     };
+
 
