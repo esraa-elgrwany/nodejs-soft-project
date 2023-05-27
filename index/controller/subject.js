@@ -63,7 +63,9 @@ res.render("subjects/show",{subject : singleSubject });
 
    };
 
+   export const getAll=async(req,res) =>{
+    const subjects = await subject.find().lean();
+    console.log(subjects);
+    res.render("subjects/generate",{subjects});
+    };
 
-
-
-  

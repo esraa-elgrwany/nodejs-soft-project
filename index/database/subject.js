@@ -1,4 +1,5 @@
 import { Schema,model } from "mongoose";
+import doctor from "./doctor.js";
 const subject = new Schema({
    
     name:{
@@ -20,7 +21,15 @@ const subject = new Schema({
         required:true,
     
     },
-   
+    stname:{
+        type :String,
+        required:true,
+    },
+    doctor:{
+        type : Schema.Types.ObjectId,
+        required:false,
+        ref:"doctor",
+    },
 },
 {timestamps:true});
  
