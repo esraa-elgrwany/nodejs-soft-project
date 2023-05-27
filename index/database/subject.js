@@ -18,7 +18,7 @@ const subject = new Schema({
     },
     requirements:{
         type :String,
-        required:false,
+        required:true,
     
     },
     stname:{

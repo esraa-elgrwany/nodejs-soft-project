@@ -8,6 +8,7 @@
         <div class="card-body">
             <br>
     <form action="/subjects" method="post">
+
      <div class="form-floating mb-3">
               <input
                 type="text"
@@ -40,18 +41,24 @@
               />
               <label for="code">Code</label>
             </div>
-           <div class="form-floating mb-3">
-        <label for="requirments" >
-        </label>
-        <select id="" class="form-select" name="requirments"placeholder="name@example.com" >
-          {{#each subjects}}
-          <option value="{{_id}}">{{name}}</option>
-        
-          {{/each}}
-        </select>
-      </div>
+
+
+             <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+                name="requirements"
+              />
+              <label for="requirements">requirements</label>
+            </div>
+           
+
+    
        <div class="form-floating mb-3">
         <label for="departments" ></label>
+
 
         <select name="department" id="" class="form-select">
 
@@ -67,3 +74,4 @@
       </div>
     </form>
 </body>
+
