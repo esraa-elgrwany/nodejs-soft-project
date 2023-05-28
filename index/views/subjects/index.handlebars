@@ -1,17 +1,19 @@
-<div class="container col-6">
-
-
-   
-    
+<body class="text-white bg-dark">
+  <div class="container col-6">
   <div class="d-grid gap-2 d-md-block">
         <br>
-          <a class="btn btn-outline-dark btn-lg" href="/subjects/create">add new subjects</h1></a>
+          <a class="btn btn-outline-info btn-lg" href="/subjects/create">add new subjects</h1></a>
+
+
           <a class="btn btn-outline-info btn-lg" href="/subjects/generate">Take generate</h1></a>
+
+
+       
             </div>
         <br>
 
          <div class="card">
-            <div class="card-body">
+            <div class="card-body-outline">
                 <table class="table">
                  <tr>
                     <th>name</th>
@@ -28,7 +30,17 @@
              <th><a class="btn btn-outline-warning" href="/subjects/{{_id}}/edit">edit</a>
              </th>
              <th><a   href=""> <form action="/subjects/{{_id}}?_method=DElETE" method="post">
-                <button class="btn btn-outline-danger" type="submit"> Delete</button>
+
+
+                <button class="btn btn-outline-danger" type="submit"onclick="showAlert()" > Delete</button>
+                <script>
+              function  showAlert() {
+              alert("Are you sure, you want to delete this");
+             }
+           </script>
+
+              
+
              </form>
              </a>
              </th>
@@ -39,5 +51,7 @@
         </div>
     </div>
 </div>
+</body >
+
 
     

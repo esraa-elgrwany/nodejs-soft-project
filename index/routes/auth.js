@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { login, loginForm, register, registerForm } from "../controller/doctor.js";
+import { doctorForm, login, loginForm, register, registerForm } from "../controller/doctor.js";
 
 
 const router =new Router();
@@ -8,6 +8,9 @@ router.post("/register",register);
 
 router.get("/login",loginForm);
 router.post("/login",login);
+
+
+router.get("/createDocor",doctorForm);
 
 
 

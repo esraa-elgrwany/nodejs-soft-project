@@ -43,16 +43,19 @@
               />
               <label for="code">Code</label>
             </div>
-             <div class="form-floating mb-3">
-        <label for="requirments" >
-        </label>
-        <select id="" class="form-select" name="requirments"placeholder="name@example.com" >
-          {{#each subjects}}
-          <option value="{{_id}}">{{name}}</option>
-        
-          {{/each}}
-        </select>
-      </div>
+            
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+                name="requirements"
+                 value="{{subject.requirements}}"
+              />
+              <label for="code">requirements</label>
+            </div>
+             
       <div class="form-floating mb-3">
         <label for="department" ></label>
         <select id="" class="form-select" name="department">
