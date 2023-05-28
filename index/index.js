@@ -6,6 +6,7 @@ import subjectsRouter from "./routes/subjectsRouter.js";
 import departmentRouter from "./routes/departmentRouter.js";
 import authRoutes from "./routes/auth.js";
 import cookieParser from "cookie-parser";
+
 import methodOverride from "method-override";
 import { authentication } from './middleware/authentication.js';
 import createDoctorRoutes from "./database/createDocyor.js";
@@ -28,12 +29,7 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.use(methodOverride('_method'));
-app.use("/subjects", authentication, subjectsRouter);
-app.use("/departments", departmentRouter);
-app.use("/", authRoutes);
-app.use("/", createDoctorRoutes);
-///////////////////////////////////////////////////////////////////////
-app.use("/students", Students_Routers);
+
 
 ///////////////////////////////////////////////////////
 
